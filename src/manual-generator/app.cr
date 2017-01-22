@@ -26,6 +26,10 @@ module ManualGenerator
       @page += "\n</body>\n</html>\n"
       # puts @page  # DEBUG
       pdf = Wkhtmltopdf::WkPdf.new @output
+      # pdf.set "documentTitle", @title
+      pdf.object_setting "footer.fontSize", "9"
+      # pdf.object_setting "footer.left", @title
+      pdf.object_setting "footer.right", "[page] / [topage]"
       pdf.convert @page
     end
 
