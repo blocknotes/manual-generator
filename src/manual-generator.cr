@@ -6,6 +6,7 @@ module ManualGenerator
   output = "doc.pdf"
   content = "#content"  # ex. "#main-content"
   custom_css = ""
+  extra_css = ""
   remote_css = false
   toc = "#summary a"  # ex. "#types-list"
   toc_links_attribute = "href"
@@ -18,6 +19,7 @@ module ManualGenerator
       parser.on( "-a STRING", "--attribute=STRING", "CSS attribute to use for TOC links (default: \"#{toc_links_attribute}\")" ) { |a| toc_links_attribute = a }
       parser.on( "-b", "--include-base-url", "Include base URL document in PDF (default: false)" ) { include_base_url = true }
       parser.on( "-c STRING", "--content=STRING", "CSS element selector to look for the contents of the page (ex. \"#{content}\")" ) { |c| content = c }
+      parser.on( "-e STRING", "--extra-css=STRING", "Extra CSS styles (ex. \"#nav_bar { display: none; }\")" ) { |e| extra_css = e }
       parser.on( "-o FILE", "--output=FILE", "Output filename (default: #{output})" ) do |o|
         output = o.strip
         if output.empty?
@@ -59,7 +61,7 @@ module ManualGenerator
       end
     end
 
-    wrk = Worker.new( content_selector: content, custom_css: custom_css, include_base_url: include_base_url, output: output, remote_css: remote_css, toc_links_attribute: toc_links_attribute, toc_selector: toc, verbose_mode: verbose_mode, url: url )
+    wrk = Worker.new( content_selector: content, custom_css: custom_css, extra_css: extra_css, include_base_url: include_base_url, output: output, remote_css: remote_css, toc_links_attribute: toc_links_attribute, toc_selector: toc, verbose_mode: verbose_mode, url: url )
     puts "--- Fetch..." if verbose_mode
     if wrk.fetch url
       puts "--- Convert..." if verbose_mode
