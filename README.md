@@ -2,7 +2,7 @@
 
 A Crystal program to generate PDF manuals from an HTML documentation site.
 
-It gets all the links found in a table of contents element, concatenates them and convert it to a unique PDF using [wkhtmltopdf-crystal](https://github.com/blocknotes/wkhtmltopdf-crystal).
+It gets all the links found in a table of contents element, downloads them and converts to a unique PDF using [wkhtmltopdf-crystal](https://github.com/blocknotes/wkhtmltopdf-crystal).
 
 ## Install
 
