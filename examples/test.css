@@ -1,0 +1,15 @@
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+a {
+  color: #a00;
+  text-decoration: none;
+}
+
+pre {
+  background: #eee;
+  border: 1px dotted #ddd;
+  padding: 2px;
+}

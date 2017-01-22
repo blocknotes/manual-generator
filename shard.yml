@@ -1,0 +1,21 @@
+name: manual-generator
+version: 0.1.0
+
+authors:
+  - Mat <mat@blocknot.es>
+
+targets:
+  manual-generator:
+    main: src/manual-generator.cr
+
+dependencies:
+  modest:
+    github: kostya/modest
+  myhtml:
+    github: kostya/myhtml
+  wkhtmltopdf-crystal:
+    github: blocknotes/wkhtmltopdf-crystal
+
+crystal: 0.20.4
+
+license: MIT
