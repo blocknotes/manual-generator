@@ -18,7 +18,7 @@ module ManualGenerator
       parser.on( "-a STRING", "--attribute=STRING", "CSS attribute to use for TOC links (default: \"#{toc_links_attribute}\")" ) { |a| toc_links_attribute = a }
       parser.on( "-b", "--include-base-url", "Include base URL document in PDF (default: false)" ) { include_base_url = true }
       parser.on( "-c STRING", "--content=STRING", "CSS element selector to look for the contents of the page (ex. \"#{content}\")" ) { |c| content = c }
-      parser.on( "-o FILENAME", "--output=FILENAME", "Output filename (default: #{output})" ) do |o|
+      parser.on( "-o FILE", "--output=FILE", "Output filename (default: #{output})" ) do |o|
         output = o.strip
         if output.empty?
           puts "! Invalid output filename"
@@ -26,7 +26,7 @@ module ManualGenerator
         end
       end
       parser.on( "-r", "--remote-css", "Fetch remote CSS styles (default: false)" ) { remote_css = true }
-      parser.on( "-s FILENAME", "--custom-css=FILENAME", "Filename with custom CSS" ) { |f| custom_css = f }
+      parser.on( "-s FILE", "--custom-css=FILE", "Filename with custom CSS" ) { |f| custom_css = f }
       parser.on( "-t STRING", "--toc=STRING", "CSS element selector to look for the table of contents of the page (ex. \"#{toc}\")" ) { |t| toc = t }
       parser.on( "-h", "--help", "Show this help") do
         puts parser
