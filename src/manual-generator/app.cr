@@ -96,8 +96,13 @@ module ManualGenerator
         if uri.scheme
           link = uri.normalize.to_s
         else
-          uri2 = URI.parse @url + link
-          link = uri2.normalize.to_s
+          if link[0] == '/'
+            uri2 = URI.parse @url
+            link = ( ( s = uri2.scheme ) ? s : "http" ) + "://" + ( ( h = uri2.host ) ? h : "" ) + link
+          else
+            uri2 = URI.parse @url + link
+            link = uri2.normalize.to_s
+          end
         end
         # link = @url + link unless uri.scheme
         puts ">>> " + link if @verbose_mode
