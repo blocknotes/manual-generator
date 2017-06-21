@@ -11,7 +11,7 @@ module ManualGenerator
     def initialize( *, @content_selector : String, @custom_css : String, @extra_css : String, include_base_url : Bool, @output : String, @remote_css : Bool, @toc_links_attribute : String, @toc_selector : String, url : String, @verbose_mode : Bool )
       @title = "Document"
       @styles = ""
-      @head = [] of String
+      @head = [ "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">" ] of String # Set encoding
       @index = [] of String
       @page = ""
       if url[-1] == '/'
