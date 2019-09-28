@@ -1,5 +1,5 @@
 name: manual-generator
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - Mat <mat@blocknot.es>
@@ -16,6 +16,6 @@ dependencies:
   wkhtmltopdf-crystal:
     github: blocknotes/wkhtmltopdf-crystal
 
-crystal: 0.20.4
+crystal: 0.31.0
 
 license: MIT
