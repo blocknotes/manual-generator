@@ -1,4 +1,11 @@
-# manual-generator
+# manual-generator - PROJECT UNMAINTAINED
+
+> *This project is not maintained anymore*
+>
+> *If you like it or continue to use it fork it please.*
+
+* * *
+* * *
 
 A Crystal program to generate PDF manuals from an HTML documentation site.
 
